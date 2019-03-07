@@ -90,14 +90,14 @@ switch ( $PsCmdlet.ParameterSetName ) {
       exit $false
     }
 
-    Write-Host ('環境 "{0} (ユーザ: {1})" のパスワードをクリップボードに取得します。' -f $Entry.Name, $Entry.User)
+    Write-Host ('環境 "{0} (ユーザ: {1})" のパスワードをクリップボードに取得します。' -f $Entry.Environment, $Entry.Account)
     Decryption $Entry.Password | scb
   }
 
   ## 暗号化した文字列をファイルに追記 
   'Set' {
     if ( $Entry ) {
-      Write-Host ('環境 "{0} (ユーザ: {1})" は既に存在します。' -f $Entry.Name,$Entry.User)
+      Write-Host ('環境 "{0} (ユーザ: {1})" は既に存在します。' -f $Entry.Environment,$Entry.Account)
       if ( (Read-Host '上書きしてもいいですか？(Y/N)') -notmatch "^y(|es)$" ) {
         exit $true
       }
