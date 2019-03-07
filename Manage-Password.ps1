@@ -23,6 +23,7 @@ function Encryption {
     [string]$String,
     [byte[]]$Key
   )
+
   $ErrorActionPreference = 'Stop'
 
   $SecureString = ConvertTo-SecureString -String $String -AsPlainText -Force
@@ -40,6 +41,7 @@ function Decryption {
     [string]$String,
     [byte[]]$Key
   )
+
   $ErrorActionPreference = 'Stop'
 
   if ( $Key ) {
@@ -47,6 +49,7 @@ function Decryption {
   } else {
     $SecureString = ConvertTo-SecureString -String $String
   }
+
   return [string]([System.Runtime.InteropServices.Marshal]::PtrToStringBSTR([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureString)))
 }
 
@@ -58,7 +61,7 @@ function Test-File {
   )
 
   if ( $IsExist -and (Test-Path $Path) ) {
-    Write-Error ('ファイル "{0}" は存在します。' -f $Path) -Category ObjectNotFound
+    Write-Error ('ファイル "{0}" は存在します。' -f $Path) -Category ResourceExists
     exit $false
   } elseif ( ! $IsExist -and ! (Test-Path $Path) ) {
     Write-Error ('ファイル "{0}" が見つかりません。' -f $Path) -Category ObjectNotFound
