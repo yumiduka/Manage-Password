@@ -5,15 +5,15 @@
 
 ## 使用法
 
-| オプション | 説明 | 別名 | 省略時の値 |
+| オプション | 説明 | 省略時の値 |
 | - | - | - | - |
-| Environment | 環境名 | env, e | 省略不可(Get, Set, Delete指定時のみ) |
-| Account | アカウント名 | a | 省略不可(Get, Set, Delete指定時のみ) |
-| Password | パスワード(平文で指定) | p | 省略不可(Set指定時のみ) |
-| Path | パスワード保存ファイルのパス | - | ~\.idlist |
-| MigratePath | 移行用パスワードファイルのパス | - | ~\Documents\Migrate_IdList.json |
-| Key | 移行用パスワードの暗号化キー、byte配列 | - | 省略不可(Import, Export指定時のみ) |
-| Encoding | パスワードファイルの読み込み、保存に使う文字コード | - | UTF8 |
+| Environment | 環境名 | 省略不可(Get, Set, Delete指定時のみ) |
+| Account | アカウント名 | 省略不可(Get, Set, Delete指定時のみ) |
+| Password | パスワード(平文で指定) | 省略不可(Set指定時のみ) |
+| Path | パスワード保存ファイルのパス | ~\.idlist |
+| MigratePath | 移行用パスワードファイルのパス | ~\Documents\Migrate_IdList.json |
+| Key | 移行用パスワードの暗号化キー、byte配列 | 省略不可(Import, Export指定時のみ) |
+| Encoding | パスワードファイルの読み込み、保存に使う文字コード | UTF8 |
 
 ### パスワードを追加 
 
